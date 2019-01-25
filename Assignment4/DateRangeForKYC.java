@@ -76,13 +76,13 @@ public class DateRangeForKYC {
  * Test cases:
  *  1. Enter sign up and present date:
  *  21-08-2010 22-09-2100
- *  Range: 22-07-2100 20-09-2100
+ *  Output: Range: 22-07-2100 20-09-2100
  *
  *  2. Enter sign up and present date:
  *  05-01-1997 21-02-2018
- *  Range: 06-12-2017 04-02-2018
+ *  Output: Range: 06-12-2017 04-02-2018
  *
  *  3. Enter sign up and present date:
  *  31-02-2010 31-01-2018
- *  Please enter a valid date.
+ *  Output: Please enter a valid date.
  */
