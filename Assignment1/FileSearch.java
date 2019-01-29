@@ -20,7 +20,7 @@ public class FileSearch {
                 return patternFileName.matcher(record.getName()).matches();
             }
         });
-        if (locationToBeSearched.isDirectory()) {    //checking the directory access first
+        if (locationToBeSearched.isDirectory()) {    //checking the directory access
             if (listOfFiles.length < 1) {
                 System.out.println("There is no file with such name in your home directory.");
             }
@@ -29,7 +29,7 @@ public class FileSearch {
                 for (File fileHit : listOfFiles) {
                     if(!fileHit.isDirectory()) {
                         try {
-                            System.out.println("Absolute Path: " + fileHit.getAbsolutePath().toString());
+                            System.out.println("Absolute Path: " + fileHit.getAbsolutePath().toString());   //printing the path of the file
                         }catch (Exception noFileFound) {
                             noFileFound.printStackTrace();
                         }
@@ -53,3 +53,20 @@ public class FileSearch {
         } while(haltExecution.toLowerCase().equals("y"));    //to make the program run till the user want
     }
 }
+
+/* Test cases:
+ * 1. imagePerforatedBy2.cpp
+ * File found.
+ * Absolute Path: /home/zadmin/imagePerforatedBy2.cpp
+ *
+ * 2. imagePerforatedBy4.cpp
+ * There is no file with such name in your home directory.
+ *
+ * 3. Username
+ * File found.
+ * Absolute Path: /home/zadmin/Username
+ *
+ * 4. ^Ab.*
+ * File found.
+ * Absolute Path: /home/zadmin/AbsoluteValue.java
+ */
