@@ -28,7 +28,7 @@ public class AlphabetCountCheck {
     }
 }
 
-/* The time complexity of this code is O(n) and space complexity is O(1)
+/* The time complexity of this code is O(n) and space complexity is O(1).
  *
  * Test cases:
  * 1. Enter the string that you want to check:
@@ -38,4 +38,8 @@ public class AlphabetCountCheck {
  * 2. Enter the string that you want to check:
  *    The quick brown fox jumps over the lazy dog
  *    Output: The input string contains all the alphabets.
+ * 
+ * 3. Enter the string that you want to check:
+ *    08091997
+ *    Output: The input string doesn't contain all the alphabets.
  */
