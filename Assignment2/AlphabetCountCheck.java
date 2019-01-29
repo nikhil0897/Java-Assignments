@@ -42,4 +42,8 @@ public class AlphabetCountCheck {
  * 3. Enter the string that you want to check:
  *    08091997
  *    Output: The input string doesn't contain all the alphabets.
+ * 
+ * 4. Enter the string that you want to check:
+ *    This is the Queens performing at Live Aid. This is the most excruciating moment that we are all experiencing today.
+ *    The input string doesn't contain all the alphabets.
  */
