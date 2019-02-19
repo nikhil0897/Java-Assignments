@@ -2,15 +2,20 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * @author Nikhil Sharma
+ */
+
 public class AlphabetCountCheck {
 
-    static Set<Integer> checkTheStatement = new HashSet<>(26);    //HashSet to maintain count of the characters occurrence
+    static Set<Integer> checkTheStatement = new HashSet<>(26); // HashSet to maintain count of the characters occurrence
+
     public static void main(String[] args) {
         int counter = 0;
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the string that you want to check: ");
         String statement = input.nextLine();
-        for (char letter : statement.toCharArray()) {    //converting string statement to a character array
+        for (char letter : statement.toCharArray()) { // converting string statement to a character array
             int indexingCharacter = letter - 'a';
             if (indexingCharacter >= 0 && indexingCharacter < 26) {
                 if (checkTheStatement.add(indexingCharacter)) {
@@ -22,13 +27,13 @@ public class AlphabetCountCheck {
                 }
             }
         }
-        if(counter != 26) {
+        if (counter != 26) {
             System.out.println("The input string doesn't contain all the alphabets.");
         }
     }
 }
 
-/* The time complexity of this code is O(n) and space complexity is O(1).
+/** The time complexity of this code is O(n) and space complexity is O(1).
  *
  * Test cases:
  * 1. Enter the string that you want to check:

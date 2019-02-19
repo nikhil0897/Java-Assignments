@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
+/**
+ * @author Nikhil Sharma
+ */
+
 public class DateRangeForKYC {
 
     private static void calculateDateRange(String signUpDate, String currentDate) throws ParseException {
@@ -22,7 +26,7 @@ public class DateRangeForKYC {
         registeredKYCDate.add(Calendar.YEAR, 1);
         registeredKYCDate.add(Calendar.DATE, -30);
 
-        if(presentDate.compareTo(registeredKYCDate)<0) {
+        if (presentDate.compareTo(registeredKYCDate) < 0) {
             System.out.println("No range");
             System.out.println();
             return;
@@ -39,16 +43,17 @@ public class DateRangeForKYC {
         endDateFromSubmission.setTime(registrationDate.getTime());
         endDateFromSubmission.add(Calendar.DATE, 30);
 
-        if(presentDate.compareTo(startingRangeFormSubmission)<0) {
+        if (presentDate.compareTo(startingRangeFormSubmission) < 0) {
             startingRangeFormSubmission.add(Calendar.YEAR, -1);
             endDateFromSubmission.add(Calendar.YEAR, -1);
         }
 
-        if(presentDate.compareTo(endDateFromSubmission)<0) {
+        if (presentDate.compareTo(endDateFromSubmission) < 0) {
             endDateFromSubmission = presentDate;
         }
         System.out.print("Range: ");
-        System.out.println(dateFormat.format(startingRangeFormSubmission.getTime()) + " " + dateFormat.format(endDateFromSubmission.getTime()));
+        System.out.println(dateFormat.format(startingRangeFormSubmission.getTime()) + " "
+                + dateFormat.format(endDateFromSubmission.getTime()));
         System.out.println();
     }
 
@@ -56,13 +61,13 @@ public class DateRangeForKYC {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of instances you want to check: ");
         int numberOfInstance = input.nextInt();
-        while(numberOfInstance>0) {
+        while (numberOfInstance > 0) {
             System.out.println("Enter sign up and present date: ");
             String signUpDate = input.next();
             String presentDate = input.next();
-            try{
+            try {
                 calculateDateRange(signUpDate, presentDate);
-            }catch (ParseException invalidDate){
+            } catch (ParseException invalidDate) {
                 System.out.println("Please enter a valid date.");
                 System.out.println();
             }
@@ -72,17 +77,24 @@ public class DateRangeForKYC {
     }
 }
 
-/*
+/**
  * Test cases:
- *  1. Enter sign up and present date:
- *  21-08-2010 22-09-2100
- *  Output: Range: 22-07-2100 20-09-2100
+ * Enter the number of instances you want to check: 
+ * 4
+ * 
+ * 1. Enter sign up and present date:
+ * 21-08-2010 22-09-2010
+ * No range
  *
- *  2. Enter sign up and present date:
- *  05-01-1997 21-02-2018
- *  Output: Range: 06-12-2017 04-02-2018
+ * 2. Enter sign up and present date:
+ * 05-01-1997 21-02-2018
+ * Range: 06-12-2017 04-02-2018
  *
- *  3. Enter sign up and present date:
- *  31-02-2010 31-01-2018
- *  Output: Please enter a valid date.
+ * 3. Enter sign up and present date:
+ * 31-02-2010 31-01-2018
+ * Please enter a valid date.
+ *
+ * 4. Enter sign up and present date:
+ * 25-10-2000 29-11-2100
+ * Range: 25-09-2100 24-11-2100
  */
